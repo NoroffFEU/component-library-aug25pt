@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alert Banner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="alert alert--info">
+      <span class="alert__icon">ℹ</span>
+      <div class="alert__content">
+        <strong>Information</strong>
+        <p>This is an informational alert. Use it to communicate helpful tips or status updates.</p>
+      </div>
+      <button class="alert__close">&times;</button>
+    </div>
+    <div class="alert alert--success">
+      <span class="alert__icon">✓</span>
+      <div class="alert__content">
+        <strong>Success</strong>
+        <p>Your changes have been saved successfully.</p>
+      </div>
+      <button class="alert__close">&times;</button>
+    </div>
+    <div class="alert alert--warning">
+      <span class="alert__icon">⚠</span>
+      <div class="alert__content">
+        <strong>Warning</strong>
+        <p>Please review the following before proceeding.</p>
+      </div>
+      <button class="alert__close">&times;</button>
+    </div>
+    <div class="alert alert--error">
+      <span class="alert__icon">✕</span>
+      <div class="alert__content">
+        <strong>Error</strong>
+        <p>Something went wrong. Please try again later.</p>
+      </div>
+      <button class="alert__close">&times;</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+}
+
+.tabs {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.tabs__nav {
+  display: flex;
+  background: #f8f9fa;
+  border-bottom: 2px solid #eee;
+}
+
+.tabs__button {
+  flex: 1;
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #888;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tabs__button:hover {
+  color: #555;
+}
+
+.tabs__button.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
+.tabs__panels {
+  padding: 24px;
+}
+
+.tabs__panel {
+  display: none;
+}
+
+.tabs__panel.active {
+  display: block;
+}
+
+.tabs__panel h3 {
+  font-size: 1.1rem;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.tabs__panel p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}

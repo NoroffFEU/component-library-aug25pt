@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Tabs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="tabs">
+      <div class="tabs__nav">
+        <button class="tabs__button active" data-tab="html">HTML</button>
+        <button class="tabs__button" data-tab="css">CSS</button>
+        <button class="tabs__button" data-tab="js">JavaScript</button>
+      </div>
+      <div class="tabs__panels">
+        <div class="tabs__panel active" id="tab-html">
+          <h3>HTML</h3>
+          <p>HTML (HyperText Markup Language) is the standard language for creating web pages. It describes the structure of a page using elements like headings, paragraphs, links, and images.</p>
+        </div>
+        <div class="tabs__panel" id="tab-css">
+          <h3>CSS</h3>
+          <p>CSS (Cascading Style Sheets) controls how HTML elements look on screen. It handles layout, colours, fonts, spacing, and animations to make pages visually appealing.</p>
+        </div>
+        <div class="tabs__panel" id="tab-js">
+          <h3>JavaScript</h3>
+          <p>JavaScript adds interactivity to web pages. It can respond to clicks, update content dynamically, validate forms, and communicate with servers — all without reloading the page.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

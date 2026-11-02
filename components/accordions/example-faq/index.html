@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Accordion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="accordion">
+      <div class="accordion__item">
+        <button class="accordion__header">
+          What is a component library?
+          <span class="accordion__icon">+</span>
+        </button>
+        <div class="accordion__body">
+          <p>A component library is a collection of reusable UI elements like buttons, cards, and modals that you can use across different pages and projects.</p>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__header">
+          Do I need a framework for this?
+          <span class="accordion__icon">+</span>
+        </button>
+        <div class="accordion__body">
+          <p>Not at all! This project uses only vanilla HTML, CSS, and JavaScript. No React, no Vue, no build tools needed.</p>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__header">
+          How do I add my component?
+          <span class="accordion__icon">+</span>
+        </button>
+        <div class="accordion__body">
+          <p>Pick a component type, create a folder with your name under that type, build your component, and open a pull request. Check CONTRIBUTING.md for the full steps.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

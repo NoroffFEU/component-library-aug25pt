@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Carousel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="carousel">
+      <div class="carousel__track">
+        <div class="carousel__slide active" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+          <p>Slide 1</p>
+        </div>
+        <div class="carousel__slide" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+          <p>Slide 2</p>
+        </div>
+        <div class="carousel__slide" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+          <p>Slide 3</p>
+        </div>
+        <div class="carousel__slide" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+          <p>Slide 4</p>
+        </div>
+      </div>
+      <button class="carousel__btn carousel__btn--prev" aria-label="Previous slide">&#10094;</button>
+      <button class="carousel__btn carousel__btn--next" aria-label="Next slide">&#10095;</button>
+      <div class="carousel__dots"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.badge--success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.badge--warning {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.badge--danger {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.badge--info {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.badge--neutral {
+  background: #e2e3e5;
+  color: #383d41;
+}

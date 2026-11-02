@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pagination__btn {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  color: #667eea;
+  background: none;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pagination__btn:hover {
+  background: #f8f9fa;
+}
+
+.pagination__btn:disabled,
+.pagination__btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination__numbers {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.pagination__number {
+  min-width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #555;
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pagination__number:hover {
+  background: #f8f9fa;
+}
+
+.pagination__number.active {
+  color: #fff;
+  background: #667eea;
+  border-color: #667eea;
+}
+
+.pagination__ellipsis {
+  color: #999;
+  padding: 0 4px;
+}
+
+.pagination-info {
+  font-size: 0.9rem;
+  color: #555;
+}

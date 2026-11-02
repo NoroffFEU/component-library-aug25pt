@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.demo-btn {
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: #667eea;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.demo-btn:hover {
+  background: #5a6fd6;
+}
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  z-index: 100;
+}
+
+.drawer-overlay.open {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer {
+  position: fixed;
+  left: -100%;
+  top: 0;
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.3s ease;
+  z-index: 101;
+}
+
+.drawer-overlay.open .drawer {
+  left: 0;
+}
+
+.drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.drawer__header h2 {
+  font-size: 1.1rem;
+  color: #1a1a2e;
+}
+
+.drawer__close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.drawer__close:hover {
+  color: #333;
+}
+
+.drawer__menu {
+  list-style: none;
+  flex: 1;
+  padding: 12px 0;
+  overflow-y: auto;
+}
+
+.drawer__menu li a {
+  display: block;
+  padding: 12px 20px;
+  color: #555;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.drawer__menu li a:hover {
+  background: #f8f9fa;
+  color: #667eea;
+}

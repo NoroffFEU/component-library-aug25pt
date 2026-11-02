@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Rating</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="rating-demo">
+      <h3>Rate this component:</h3>
+      <div class="rating" id="rating1">
+        <button class="rating__star" data-value="1" aria-label="1 star">★</button>
+        <button class="rating__star" data-value="2" aria-label="2 stars">★</button>
+        <button class="rating__star" data-value="3" aria-label="3 stars">★</button>
+        <button class="rating__star" data-value="4" aria-label="4 stars">★</button>
+        <button class="rating__star" data-value="5" aria-label="5 stars">★</button>
+      </div>
+      <p class="rating-text">Rating: <span id="ratingValue">0</span> / 5</p>
+    </div>
+
+    <div class="rating-demo">
+      <h3>Read-only example:</h3>
+      <div class="rating rating--readonly">
+        <span class="rating__star rating__star--filled">★</span>
+        <span class="rating__star rating__star--filled">★</span>
+        <span class="rating__star rating__star--filled">★</span>
+        <span class="rating__star">★</span>
+        <span class="rating__star">★</span>
+      </div>
+      <p class="rating-text">3 out of 5 stars (247 reviews)</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
