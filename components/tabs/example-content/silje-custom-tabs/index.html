@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Stitch Club | Content Tabs</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="tabs" aria-labelledby="stitch-club-title">
+      <h1 id="stitch-club-title" class="viusally-hidden">The Stitch Club</h1>
+
+      <div class="tabs__list" role="tablist" aria-label="Stitch Club crafts">
+        <button
+          class="tabs__tab"
+          type="button"
+          role="tab"
+          id="tab-knitting"
+          aria-controls="panel-knitting"
+          aria-selected="true"
+          data-theme="knitting"
+        >
+          Knitting
+        </button>
+        <button
+          class="tabs__tab"
+          type="button"
+          role="tab"
+          id="tab-crochet"
+          aria-controls="panel-crochet"
+          aria-selected="false"
+          tabindex="-1"
+          data-theme="crochet"
+        >
+          Crochet
+        </button>
+        <button
+          class="tabs__tab"
+          type="button"
+          role="tab"
+          id="tab-sewing"
+          aria-controls="panel-sewing"
+          aria-selected="false"
+          tabindex="-1"
+          data-theme="sewing"
+        >
+          Sewing
+        </button>
+      </div>
+
+      <section
+        class="tabs__panel"
+        id="panel-knitting"
+        role="tabpanel"
+        aria-labelledby="tab-knitting"
+        tabindex="0"
+        data-theme="knitting"
+      >
+        <div>
+          <h2>One row at at time.</h2>
+          <p>
+            Put the kettle on and cast on a few stitches. A simple scarf is a
+            good project to pick up whenever you have a spare moment.
+          </p>
+        </div>
+        <img class="tabs__art" src="images/knitting.png" alt="" />
+      </section>
+
+      <section
+        class="tabs__panel"
+        id="panel-crochet"
+        role="tabpanel"
+        aria-labelledby="tab-crochet"
+        tabindex="0"
+        data-theme="crochet"
+        hidden
+      >
+        <div>
+          <h2>Little squares, big plans.</h2>
+          <p>
+            Make a granny square in your favorite colors. Keep going until you
+            have enough for a cushion cover or a very colorful bag.
+          </p>
+        </div>
+        <img class="tabs__art" src="images/crochet.png" alt="" />
+      </section>
+
+      <section
+        class="tabs__panel"
+        id="panel-sewing"
+        role="tabpanel"
+        aria-labelledby="tab-sewing"
+        tabindex="0"
+        data-theme="sewing"
+        hidden
+      >
+        <div>
+          <h2>Too good to throw away</h2>
+          <p>
+            That little piece of fabric you've been saving? Turn it into a
+            drawstring pouch for buttons, stitch markers or other tiny
+            treasures.
+          </p>
+        </div>
+        <img class="tabs__art" src="images/sewing.png" alt="" />
+      </section>
+    </main>
+  </body>
+</html>
