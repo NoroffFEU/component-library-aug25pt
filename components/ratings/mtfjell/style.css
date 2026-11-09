@@ -41,6 +41,9 @@ body {
   color: var(--color-blue);
   margin-bottom: 8px;
   text-transform: uppercase;
+  float: left;
+  width: 100%;
+  text-align: center;
 }
 
 .star-label {
@@ -48,9 +51,10 @@ body {
   color: var(--color-accent);
 }
 
-.star-label:focus-visible {
+.rating-input:focus-visible + .star-label {
   color: var(--color-orange);
   transform: scale(1.2);
+  outline: 2px solid var(--color-orange);
 }
 
 .rating-input:checked + .star-label,
@@ -81,8 +85,17 @@ body {
 
 .rating-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
+}
+
+@media (min-width: 450px) {
+  .rating-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
 }
 
 .rating-result {
@@ -92,7 +105,6 @@ body {
   justify-content: center;
   gap: 8px;
   background: var(--color-blue);
-  padding: 10px;
   border-radius: 50%;
   width: 100px;
   height: 100px;
