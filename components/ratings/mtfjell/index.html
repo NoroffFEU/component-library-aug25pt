@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Rating</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <fieldset class="star-ratings">
+        <legend class="rating-legend">Rate this component</legend>
+
+        <div class="rating-content">
+          <p class="rating-result">
+            <output id="rating-value" aria-live="polite"></output>
+            <span class="rating-text">Rating</span>
+          </p>
+
+          <div class="rating-items">
+            <input
+              class="rating-input"
+              type="radio"
+              id="star-1"
+              name="rating"
+              value="1"
+            />
+            <label for="star-1" class="star-label">
+              <span aria-hidden="true">★</span>
+              <span class="visually-hidden">1 star</span>
+            </label>
+
+            <input
+              class="rating-input"
+              type="radio"
+              id="star-2"
+              name="rating"
+              value="2"
+            />
+            <label for="star-2" class="star-label">
+              <span aria-hidden="true">★</span>
+              <span class="visually-hidden">2 stars</span>
+            </label>
+
+            <input
+              class="rating-input"
+              type="radio"
+              id="star-3"
+              name="rating"
+              value="3"
+            />
+            <label for="star-3" class="star-label">
+              <span aria-hidden="true">★</span>
+              <span class="visually-hidden">3 stars</span>
+            </label>
+
+            <input
+              class="rating-input"
+              type="radio"
+              id="star-4"
+              name="rating"
+              value="4"
+            />
+            <label for="star-4" class="star-label">
+              <span aria-hidden="true">★</span>
+              <span class="visually-hidden">4 stars</span>
+            </label>
+
+            <input
+              class="rating-input"
+              type="radio"
+              id="star-5"
+              name="rating"
+              value="5"
+            />
+            <label for="star-5" class="star-label">
+              <span aria-hidden="true">★</span>
+              <span class="visually-hidden">5 stars</span>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </main>
+  </body>
+</html>
