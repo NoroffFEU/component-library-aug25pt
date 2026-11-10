@@ -18,20 +18,20 @@ const COMPONENTS = {
   accordions: [
     { name: "FAQ Accordion", folder: "example-faq", author: "Example" },
   ],
-  alerts: [
-    { name: "Alert Banner", folder: "example-info", author: "Example" },
-  ],
+  alerts: [{ name: "Alert Banner", folder: "example-info", author: "Example" }],
   badges: [
     { name: "Status Badge", folder: "example-status", author: "Example" },
   ],
   breadcrumbs: [
     { name: "Breadcrumb Nav", folder: "example-nav", author: "Example" },
   ],
-  buttons: [
-    { name: "Neon Button", folder: "example-neon", author: "Example" },
-  ],
+  buttons: [{ name: "Neon Button", folder: "example-neon", author: "Example" }],
   "buttons-groups": [
-    { name: "Button Group", folder: "example-buttons-group", author: "Example" },
+    {
+      name: "Button Group",
+      folder: "example-buttons-group",
+      author: "Example",
+    },
   ],
   cards: [
     { name: "Profile Card", folder: "example-profile", author: "Example" },
@@ -52,13 +52,22 @@ const COMPONENTS = {
     { name: "Top Navigation", folder: "example-top", author: "Example" },
   ],
   pagination: [
-    { name: "Numbered Pagination", folder: "example-numbered", author: "Example" },
+    {
+      name: "Numbered Pagination",
+      folder: "example-numbered",
+      author: "Example",
+    },
   ],
   "progress-bars": [
     { name: "Linear Progress", folder: "example-linear", author: "Example" },
   ],
   ratings: [
     { name: "Star Rating", folder: "example-stars", author: "Example" },
+    {
+      name: "Star Rating Mtfjell",
+      folder: "mtfjell",
+      author: "MTFjellStudio",
+    },
   ],
   spinners: [
     { name: "Loading Spinner", folder: "example-dots", author: "Example" },
@@ -70,7 +79,11 @@ const COMPONENTS = {
     { name: "Content Tabs", folder: "example-content", author: "Example" },
   ],
   toasts: [
-    { name: "Toast Notification", folder: "example-success", author: "Example" },
+    {
+      name: "Toast Notification",
+      folder: "example-success",
+      author: "Example",
+    },
   ],
   tooltips: [
     { name: "Hover Tooltip", folder: "example-hover", author: "Example" },
