@@ -20,7 +20,7 @@ A standalone tabs component for knitting, crochet and sewing. Each tab opens a p
 
 ## Design decisions
 
-- **Color nad shape.** The three themes use strawberry pink, lemon yellow and blueberry purple. A stronger background color, dark border and shadow mark the selected tab. Dashed lines around the panels give them a stitched look.
+- **Color and shape.** The three themes use strawberry pink, lemon yellow and blueberry purple. A stronger background color, dark border and shadow mark the selected tab. Dashed lines around the panels give them a stitched look.
 - **Tab roles and selection.** The component uses native buttons with `role="tab"` inside a `tablist`. JavaScript keeps `aria-selected`, `tabindex` and `hidden` in sync so only the selected panel is visible.
 - **Visible keyboard focus.** A separate `:focus-visible` outline makes it clear which element has keyboard focus.
 - **Standalone demo.** The icons are local PNGs and the component runs without external dependencies.
