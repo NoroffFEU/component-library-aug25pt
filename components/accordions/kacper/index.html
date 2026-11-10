@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accessible FAQ accordion – vanilla HTML, CSS and JavaScript component.">
+    <title>Accessible FAQ Accordion</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="faq" aria-labelledby="faq-title">
+        <p class="faq__label">
+          <span class="faq__label-number">01</span>
+          <span class="faq__label-dot" aria-hidden="true"></span>
+          FAQs
+        </p>
+        <h1 class="faq__title" id="faq-title">Common Questions</h1>
+
+        <div class="accordion" data-single>
+          <div class="accordion__item accordion__item--open">
+            <h2 class="accordion__heading">
+              <button
+                class="accordion__button"
+                type="button"
+                id="accordion-button-1"
+                aria-expanded="true"
+                aria-controls="accordion-panel-1"
+              >
+                <span class="accordion__number" aria-hidden="true">1</span>
+                <span class="accordion__title">What does the agency do?</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+            </h2>
+            <div class="accordion__panel" id="accordion-panel-1" role="region" aria-labelledby="accordion-button-1">
+              <div class="accordion__content">
+                <p>
+                  We design and build accessible, fast websites for small and medium-sized businesses – from the
+                  first sketch to launch and beyond.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <h2 class="accordion__heading">
+              <button
+                class="accordion__button"
+                type="button"
+                id="accordion-button-2"
+                aria-expanded="false"
+                aria-controls="accordion-panel-2"
+              >
+                <span class="accordion__number" aria-hidden="true">2</span>
+                <span class="accordion__title">How long does a project take?</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+            </h2>
+            <div class="accordion__panel" id="accordion-panel-2" role="region" aria-labelledby="accordion-button-2">
+              <div class="accordion__content">
+                <p>A simple landing page usually takes 2–3 weeks. A full website with several pages takes 4–8 weeks.</p>
+                <p>We agree on a timeline together before we start, so you always know what happens next.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <h2 class="accordion__heading">
+              <button
+                class="accordion__button"
+                type="button"
+                id="accordion-button-3"
+                aria-expanded="false"
+                aria-controls="accordion-panel-3"
+              >
+                <span class="accordion__number" aria-hidden="true">3</span>
+                <span class="accordion__title">What does a website cost?</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+            </h2>
+            <div class="accordion__panel" id="accordion-panel-3" role="region" aria-labelledby="accordion-button-3">
+              <div class="accordion__content">
+                <p>
+                  Every project is different. After a short call we send you a fixed price, so there are no
+                  surprises on the invoice.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <h2 class="accordion__heading">
+              <button
+                class="accordion__button"
+                type="button"
+                id="accordion-button-4"
+                aria-expanded="false"
+                aria-controls="accordion-panel-4"
+              >
+                <span class="accordion__number" aria-hidden="true">4</span>
+                <span class="accordion__title">Do I need technical knowledge?</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+            </h2>
+            <div class="accordion__panel" id="accordion-panel-4" role="region" aria-labelledby="accordion-button-4">
+              <div class="accordion__content">
+                <p>
+                  Not at all. We handle the technical side and show you how to update your own content when the
+                  site is live.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <h2 class="accordion__heading">
+              <button
+                class="accordion__button"
+                type="button"
+                id="accordion-button-5"
+                aria-expanded="false"
+                aria-controls="accordion-panel-5"
+              >
+                <span class="accordion__number" aria-hidden="true">5</span>
+                <span class="accordion__title">Do you offer support after launch?</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+            </h2>
+            <div class="accordion__panel" id="accordion-panel-5" role="region" aria-labelledby="accordion-button-5">
+              <div class="accordion__content">
+                <p>Yes. Every website comes with 30 days of free support, and we offer monthly maintenance plans after that.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="faq__footer">
+          Still have questions?
+          <a class="faq__link" href="#">Contact us <span aria-hidden="true">→</span></a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

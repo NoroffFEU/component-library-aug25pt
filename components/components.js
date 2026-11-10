@@ -17,6 +17,7 @@
 const COMPONENTS = {
   accordions: [
     { name: "FAQ Accordion", folder: "example-faq", author: "Example" },
+    { name: "Accessible FAQ Accordion", folder: "kacper", author: "Kacper Kij" },
   ],
   alerts: [
     { name: "Alert Banner", folder: "example-info", author: "Example" },
