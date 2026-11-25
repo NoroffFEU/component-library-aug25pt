@@ -1,0 +1,340 @@
+/* ----- Variables ----- */
+:root {
+  --color-page: #0e0e0e;
+  --color-glow: #525252;
+  --color-card-top: #f5f5f5;
+  --color-card-bottom: #b8b8b8;
+  --color-white: #ffffff;
+  --color-ink: #111111;
+  --color-text-muted: #5f5f5f;
+  --color-line: #d4d4d4;
+  --color-slot-line: rgba(17, 17, 17, 0.5);
+  --color-backdrop: rgba(8, 8, 8, 0.82);
+  --color-focus: #5b4dff;
+  --color-status: #3a2fc0;
+
+  --font-family: "Archivo", "Segoe UI", system-ui, sans-serif;
+  --font-family-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --fs-11: 0.6875rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-modal-title: 4.5rem;
+  --fs-demo-title: 8.25rem;
+  --fw-100: 100;
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-900: 900;
+  --lh-title: 0.92;
+  --lh-text: 1.5;
+  --ls-title: -0.04em;
+  --ls-mono: 0.04em;
+
+  --space-4: 0.25rem;
+  --space-14: 0.875rem;
+  --space-16: 1rem;
+  --space-20: 1.25rem;
+  --space-28: 1.75rem;
+  --space-40: 2.5rem;
+  --space-48: 3rem;
+  --space-56: 3.5rem;
+  --space-80: 5rem;
+
+  --radius-card: 0.5rem;
+  --radius-pill: 999px;
+  --modal-width: 50rem;
+  --close-size: 2.25rem;
+  --speed: 0.25s;
+
+  /* Fine grain texture on the cards (anti flat colour) */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --card-background: var(--grain), linear-gradient(180deg, var(--color-card-top) 0%, var(--color-card-bottom) 100%);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-16: 0.9375rem;
+    --fs-modal-title: 2.875rem;
+    --fs-demo-title: 3.25rem;
+    --space-48: 1.75rem;
+    --space-40: 1.25rem;
+    --space-56: 1.25rem;
+    --space-80: 2.5rem;
+    --radius-card: 0.375rem;
+  }
+}
+
+/* ----- Base ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  color: var(--color-ink);
+  background: radial-gradient(ellipse at 50% 0%, var(--color-glow) 0%, var(--color-page) 60%);
+  background-color: var(--color-page);
+}
+
+/* Stop the page behind an open modal from scrolling */
+body:has(.modal[open]) {
+  overflow: hidden;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-80) var(--space-16);
+}
+
+/* ----- Demo card (page content) ----- */
+.demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-80);
+  width: 100%;
+  max-width: 75rem;
+  padding: var(--space-56) var(--space-56) var(--space-48);
+  border-radius: var(--radius-card);
+  background: var(--card-background);
+}
+
+.demo__title {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-demo-title);
+  font-weight: var(--fw-100);
+  line-height: var(--lh-title);
+  letter-spacing: var(--ls-title);
+}
+
+.demo__title-strong {
+  font-weight: var(--fw-900);
+}
+
+.demo__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-20);
+}
+
+/* Same type as .modal__text, only the colour is different */
+.demo__status {
+  font-size: var(--fs-16);
+  line-height: var(--lh-text);
+  color: var(--color-status);
+}
+
+/* ----- Buttons ----- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-14);
+  border: none;
+  font-family: inherit;
+  font-size: var(--fs-14);
+  font-weight: var(--fw-600);
+  cursor: pointer;
+  transition: opacity var(--speed) ease;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn--primary {
+  margin-left: auto;
+  padding: var(--space-14) var(--space-16) var(--space-14) var(--space-20);
+  border-radius: var(--radius-pill);
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+.btn--secondary {
+  padding: var(--space-4) 0;
+  border-bottom: 1.5px solid var(--color-ink);
+  background: none;
+  color: var(--color-ink);
+}
+
+.btn__icon {
+  flex-shrink: 0;
+}
+
+.btn:focus-visible,
+.modal__close:focus-visible {
+  outline: 2.5px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* ----- Modal ----- */
+.modal {
+  width: calc(100% - 2 * var(--space-16));
+  max-width: var(--modal-width);
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-card);
+  color: var(--color-ink);
+  background: var(--card-background);
+}
+
+.modal::backdrop {
+  background: var(--color-backdrop);
+}
+
+.modal[open] {
+  animation: modal-in var(--speed) ease-out;
+}
+
+.modal[open]::backdrop {
+  animation: backdrop-in var(--speed) ease-out;
+}
+
+.modal__bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--space-16) var(--space-28);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.modal__close {
+  display: grid;
+  place-items: center;
+  width: var(--close-size);
+  height: var(--close-size);
+  border: 1.5px solid var(--color-line);
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: opacity var(--speed) ease;
+}
+
+.modal__close:hover {
+  opacity: 0.7;
+}
+
+.modal__body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-48);
+  padding: var(--space-48) var(--space-40) var(--space-40) var(--space-28);
+}
+
+.modal__title {
+  font-size: var(--fs-modal-title);
+  font-weight: var(--fw-100);
+  line-height: var(--lh-title);
+  letter-spacing: var(--ls-title);
+}
+
+/* Each line on its own row on desktop, like the Figma design */
+.modal__title-line {
+  display: block;
+}
+
+.modal__title-strong {
+  font-weight: var(--fw-900);
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+  padding-top: 0.5rem;
+}
+
+.modal__text {
+  font-size: var(--fs-16);
+  line-height: var(--lh-text);
+}
+
+.modal__slot {
+  padding: var(--space-14) var(--space-16);
+  border: 1px dashed var(--color-slot-line);
+}
+
+.modal__slot-label {
+  font-family: var(--font-family-mono);
+  font-size: var(--fs-11);
+  font-weight: 500;
+  letter-spacing: var(--ls-mono);
+  text-transform: uppercase;
+}
+
+.modal__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-28);
+}
+
+.modal__actions .btn--primary {
+  margin-left: 0;
+}
+
+/* ----- Animations ----- */
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem) scale(0.98);
+  }
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal[open],
+  .modal[open]::backdrop {
+    animation: none;
+  }
+
+  .btn,
+  .modal__close {
+    transition: none;
+  }
+}
+
+/* ----- Mobile ----- */
+@media (max-width: 768px) {
+  .modal__bar {
+    padding: var(--space-16) var(--space-20);
+  }
+
+  .modal__body {
+    grid-template-columns: 1fr;
+    padding: var(--space-28) var(--space-20) 1.5rem;
+  }
+
+  /* "Start a" / "new project?" on mobile: only the bold line starts a new row */
+  .modal__title-line {
+    display: inline;
+  }
+
+  .modal__title-strong {
+    display: block;
+  }
+
+  .modal__actions {
+    justify-content: space-between;
+  }
+
+  .demo__foot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .demo__foot .btn--primary {
+    margin-left: 0;
+  }
+}
