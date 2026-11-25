@@ -47,6 +47,7 @@ const COMPONENTS = {
   ],
   modals: [
     { name: "Confirm Dialog", folder: "example-confirm", author: "Example" },
+    { name: "Project Request Modal", folder: "kacper", author: "Kacper Kij" },
   ],
   navbars: [
     { name: "Top Navigation", folder: "example-top", author: "Example" },

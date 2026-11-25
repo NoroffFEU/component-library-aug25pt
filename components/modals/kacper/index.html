@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accessible modal dialog – vanilla HTML, CSS and JavaScript component built on the native dialog element.">
+    <title>Accessible Modal Dialog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;400;600;900&family=IBM+Plex+Mono:wght@500&display=swap"
+    >
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="demo" aria-labelledby="demo-title">
+        <h1 class="demo__title" id="demo-title">
+          Ready to
+          <strong class="demo__title-strong">work with us?</strong>
+        </h1>
+
+        <div class="demo__foot">
+          <p class="demo__status" role="status"></p>
+          <button class="btn btn--primary" type="button" data-modal-open="project-modal">
+            Open modal
+            <svg class="btn__icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="modal" id="project-modal" aria-labelledby="modal-title" aria-describedby="modal-text">
+      <form class="modal__inner" method="dialog">
+        <div class="modal__bar">
+          <button class="modal__close" type="submit" value="close" aria-label="Close dialog">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.75" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal__body">
+          <h2 class="modal__title" id="modal-title">
+            <span class="modal__title-line">Start</span>
+            <span class="modal__title-line">a new</span>
+            <strong class="modal__title-line modal__title-strong">project?</strong>
+          </h2>
+
+          <div class="modal__content">
+            <p class="modal__text" id="modal-text">
+              Tell us a little about your business. We reply within two working days – no sales calls, no newsletter.
+            </p>
+
+            <!-- Slot: the next component in the chain (Silje) goes here -->
+            <div class="modal__slot">
+              <p class="modal__slot-label">[ slot ]</p>
+            </div>
+
+            <div class="modal__actions">
+              <button class="btn btn--secondary" type="submit" value="cancel">Not now</button>
+              <button class="btn btn--primary" type="submit" value="send">
+                Send request
+                <svg class="btn__icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
