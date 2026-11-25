@@ -16,8 +16,8 @@
   --font-size-price: 18px;
 
   /* Spacing */
-  --card-padding: 15px;
-  --card-gap: 10px;
+  --card-padding: 20px;
+  --card-gap: 15px;
 
   /* Border radius */
   --card-radius: 20px;
@@ -43,6 +43,7 @@ body {
 
 .card-grid {
   display: grid;
+  grid-template-columns: 1fr;
   justify-items: center;
   gap: var(--card-gap);
   max-width: 1200px;
@@ -177,3 +178,9 @@ body {
 /* INTERACTION STATES */
 
 /* RESPONSIVE STYLES */
+
+@media (max-width: 599px) {
+  .card-container {
+    max-width: 450px;
+  }
+}
