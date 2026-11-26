@@ -71,16 +71,22 @@ body {
   background: var(--color-background);
   border: 1px solid var(--color-accent);
   border-radius: var(--card-radius);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   max-width: 350px;
   width: 100%;
+}
+
+@media (max-width: 599px) {
+  .card-container {
+    max-width: 450px;
+  }
 }
 
 /* MEDIA */
 
 .media-container {
   position: relative;
-  aspect-ratio: 4 / 3;
   background: var(--color-accent);
   height: 250px;
 }
@@ -96,10 +102,9 @@ body {
   position: absolute;
   top: var(--card-gap);
   left: var(--card-gap);
-  padding: 2px 8px;
   color: var(--color-body);
   background: var(--color-accent);
-  padding: 8px 8px;
+  padding: 8px;
   border-radius: 80px;
   font-weight: 600;
   font-size: var(--font-size-category);
@@ -151,15 +156,16 @@ body {
 
 .card-divider {
   width: 100%;
-  margin: auto 0 0;
+  margin: 0;
   border: 0;
   border-top: 1px solid var(--color-accent);
 }
 
-/* ACTION/SLOT */
+/* ACTION */
 
 .card-button {
   width: 100%;
+  margin-top: auto;
   padding: 10px var(--card-padding);
   border: 0;
   border-radius: calc(var(--card-radius) / 2);
@@ -169,18 +175,15 @@ body {
   cursor: pointer;
 }
 
+/* INTERACTION STATES */
+
 .card-button:hover,
 .card-button:focus-visible {
   background: var(--color-orange);
   color: var(--color-blue);
 }
 
-/* INTERACTION STATES */
-
-/* RESPONSIVE STYLES */
-
-@media (max-width: 599px) {
-  .card-container {
-    max-width: 450px;
-  }
+.card-button:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 3px;
 }
